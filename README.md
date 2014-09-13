@@ -110,6 +110,8 @@ $ vagrant up
 
 ### Mysql:
 
+You can put your dump at "./_sql/dbname.sql" it will be automatically imported into "dbname" database.
+
 root password: rootpassword
 
 - name: dbname
@@ -120,6 +122,9 @@ root password: rootpassword
 Note: Connect using SSH tunnel (example: MySQL Workbench (Cross Platform)), username vagrant and SSH key generated at puphpet/files/dot/ssh/id_rsa. This key is generated after your initial "$ vagrant up"! 
 
 ### Apache vhost:
+
+Put your files into "./_webfiles", it's the public web root.
+
 - server_name: awesome.dev
 - server_aliases:
   - www.awesome.dev
