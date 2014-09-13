@@ -1,9 +1,9 @@
-A web development environnement with PuPHPet
+A web development environment with PuPHPet
 ==========================
 
 That PuPHPet configuration file is usefull for simply start a web development environment with debugging tools under a LAMP architecture (Linux/Apache/MySQL/PHP) using Vagrant.
 
-The finaly generated box provide all packages and Apache/PHP/Ruby/Pear/PECL modules what you need in major cases for web developpements including debugging tools.
+The finaly generated box provide all packages and Apache/PHP/Ruby/Pear/PECL modules what you need in major cases for web developments including debugging tools.
 
 Firstly writed and optimized for a Windows platform (specially for sharing web root folder settings), succesfully tested with Windows 8.1x64, VirtualBox 4.3.16 and Vagrant 1.6.5.
 
