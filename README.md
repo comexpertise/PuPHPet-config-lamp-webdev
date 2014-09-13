@@ -24,7 +24,7 @@ Enjoy!
 - Vagrant 1.6+
 - Vagrant plugin(s) : winnfs
 
-## Box details
+## Used configuration
 
 ### Mysql:
 
@@ -56,7 +56,7 @@ Put your files into "./_webfiles", it's the public web root.
   envvars:
       - 'APP_ENV dev'
 
-## System:
+## Box system details:
 - memory: 512
 - cpus: 2
 - private_network: 192.168.56.100
