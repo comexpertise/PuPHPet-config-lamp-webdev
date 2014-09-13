@@ -1,13 +1,11 @@
-PuPHPet-config-lamp-webdev
+A web development environnement with PuPHPet
 ==========================
 
-Usefull for simply start a (web) developpement/debugging environnement with LAMP (Linux/Apache/MySQL/PHP) using Vagrant.
+That PuPHPet configuration file is usefull for simply start a web development environment with debugging tools under a LAMP architecture (Linux/Apache/MySQL/PHP) using Vagrant.
 
-This a PuPHPet config file for easily fast start a (web) development environnement under LAMP architecture. (VirtualBox, Debian Wheezy 7.5 x64, LAMP, PHP 5.5, Ruby, Xdebug, Xhprof, Drush...)
+The finaly generated box provide all packages and Apache/PHP/Ruby/Pear/PECL modules what you need in major cases for web developpements including debugging tools.
 
-The box provide all packages and Apache/PHP/Ruby/Pear/PECL modules you need in major cases for web developpements with debugging tools.
-
-Firstly writed and optimized for a Windows platform (specially sharing settings), succesfully tested with Windows 8.1x64, VirtualBox 4.3.16 and Vagrant 1.6.5.
+Firstly writed and optimized for a Windows platform (specially for sharing web root folder settings), succesfully tested with Windows 8.1x64, VirtualBox 4.3.16 and Vagrant 1.6.5.
 
 ## Box configuration:
 
