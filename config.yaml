@@ -43,6 +43,7 @@ vagrantfile-local:
                         - '-z'
                     exclude:
                         - .vagrant/
+                        - _sql/
                     auto: 'false'
         usable_port_range:
             start: 10200
