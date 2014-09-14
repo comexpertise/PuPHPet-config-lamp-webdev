@@ -46,6 +46,7 @@ vagrantfile-local:
                     exclude:
                         - .vagrant/
                         - _sql/
+                        - nbproject/
                     auto: 'true'
         usable_port_range:
             start: 10200
