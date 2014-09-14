@@ -22,9 +22,11 @@ Enjoy!
 ## Required:
 - VirtualBox 4.3+
 - Vagrant 1.6+
-  - Vagrant plugin(s):
+  - plugin(s):
     - winnfs (only if you use the rsync sharing type)
-- Cygwin 1.7+ with rsync (1.0+) functionnal package (Windows only - only if you use the nfs sharing type)
+- Cygwin 1.7+ (Windows only - only if you use the nfs sharing type)
+  - packages:
+    - rsync (3.1+ because use --chown option)
 
 ## Used configuration
 
