@@ -47,10 +47,10 @@ vagrantfile-local:
                         - '-z'
                     exclude:
                         - .vagrant/
-                        - _sql/*
+                        - '_sql/*/'
                         # add your excluded folders here
-                        - nbproject/
-                        - _webfiles/cache/*/
+                        - 'nbproject/'
+                        - '_webfiles/cache/*/'
                     auto: 'true'
         usable_port_range:
             start: 10200
