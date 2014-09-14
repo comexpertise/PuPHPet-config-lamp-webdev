@@ -23,10 +23,10 @@ Enjoy!
 - VirtualBox 4.3+
 - Vagrant 1.6+
   - plugin(s):
-    - winnfs (only if you use the rsync sharing type)
-- Cygwin 1.7+ (Windows only - only if you use the nfs sharing type)
+    - winnfs (only if you use the nfs sharing type)
+- Cygwin 1.7+ (Windows - only if you use the rsync sharing type)
   - packages:
-    - rsync (3.1+ because use --chown option)
+    - rsync
 
 ## Used configuration
 
@@ -75,7 +75,22 @@ Read: http://mitchellh.com/comparing-filesystem-performance-in-virtual-machines 
 ### RSYNC
 Rsync if faster more than NFS under Windows, it simply use VM local filesystem but synchronize your locally (host) files changed.
 
-For use it, you can simply use Cygwin (https://www.cygwin.com/) and install the rsync packages et their dependencies. Next you have to edit the config.yaml file and replace "sync_type: rsync" with "sync_type: rsync".
+For use it, you can simply use Cygwin (https://www.cygwin.com/) and install the rsync packages et their dependencies. Next you have to edit the config.yaml file and replace "sync_type: nfs" with "sync_type: rsync".
+
+Note about ownership: You need to manually edit the Vagrantfile to force owner/group set after rsync finished. Simply add "group: 'www-data', owner: 'www-data', " before "rsync__args: rsync_args, rsync__exclude:", finally done:
+
+```
+# in Vagrantfile at line 81:
+data['vm']['synced_folder'].each do |i, folder|
+      ...
+        config.vm.synced_folder "#{folder['source']}", "#{folder['target']}", id: "#{i}",
+          group: 'www-data', owner: 'www-data', rsync__args: rsync_args, rsync__exclude: rsync_exclude, rsync__auto: rsync_auto, type: 'rsync'
+      else
+        ...
+      end
+    end
+  end
+```
 
 ## Box system details:
 - memory: 512
