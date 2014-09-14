@@ -1,4 +1,4 @@
-A web development environment with PuPHPet
+Start a web development environment with PuPHPet ready in 5 minutes!
 ==========================
 
 That PuPHPet configuration file is usefull for simply start a faster web development environment with debugging tools under a LAMP architecture (Linux/Apache/MySQL/PHP) using Vagrant.
