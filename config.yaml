@@ -38,7 +38,7 @@ vagrantfile-local:
                 sync_type: nfs
                 rsync:
                     args:
-                        - '--chmod=ugo=rwX'
+                        - '--chmod=ug=rwX,o=rxX'
                         - '--verbose'
                         - '--archive'
                         - '--delete'
