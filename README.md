@@ -24,7 +24,7 @@ Enjoy!
 - Vagrant 1.6+
   - Vagrant plugin(s):
     - winnfs (only if you use the rsync sharing type)
-- Cygwin 1.7+ with rsync functionnal package (Windows only - only if you use the nfs sharing type)
+- Cygwin 1.7+ with rsync (1.0+) functionnal package (Windows only - only if you use the nfs sharing type)
 
 ## Used configuration
 
