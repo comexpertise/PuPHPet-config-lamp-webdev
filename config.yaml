@@ -35,18 +35,22 @@ vagrantfile-local:
             HvZ0waPJas5Q:
                 source: ./
                 target: /var/www
+                # choose nfs OR rsync
                 sync_type: nfs
                 rsync:
                     args:
-                        - '--chmod=ug=rwX,o=rxX'
+                        # uncomment for set custom chmod
+                        #- '--chmod=ug=rwX,o=rxX'
                         - '--verbose'
                         - '--archive'
                         - '--delete'
                         - '-z'
                     exclude:
                         - .vagrant/
-                        - _sql/
+                        - _sql/*
+                        # add your excluded folders here
                         - nbproject/
+                        - _webfiles/cache/*/
                     auto: 'true'
         usable_port_range:
             start: 10200
