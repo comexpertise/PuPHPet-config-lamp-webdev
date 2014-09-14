@@ -39,7 +39,7 @@ vagrantfile-local:
                 sync_type: nfs
                 rsync:
                     args:
-                        # uncomment for set custom chmod
+                        # uncomment next line for set custom chmod
                         #- '--chmod=ug=rwX,o=rxX'
                         - '--verbose'
                         - '--archive'
@@ -47,8 +47,8 @@ vagrantfile-local:
                         - '-z'
                     exclude:
                         - .vagrant/
-                        - '_sql/*/'
                         # add your excluded folders here
+                        - 'tmp/'
                         - 'nbproject/'
                         - '_webfiles/cache/*/'
                     auto: 'true'
