@@ -58,6 +58,23 @@ Put your files into "./_webfiles", it's the public web root.
   envvars:
       - 'APP_ENV dev'
 
+## Choose sharing type
+
+### WINNFS (Vagrant plugin, default option)
+This actually configured for use NFS shares for speed improvment under Windows. For use this Vagrant configuration file you have to installed the winnfs vagrant plugin (https://github.com/GM-Alex/vagrant-winnfsd), you can easily install from console (for Windows users, we recommand to use Cygwin or PowerShell), simply run:
+```
+$ vagrant plugin install vagrant-winnfsd
+```
+
+Note: for use VirtualBox under Windows you have to uninstall the Hyper-V feature.
+
+Read: http://mitchellh.com/comparing-filesystem-performance-in-virtual-machines Another good (fast) solution under Windows is to use RSYNC fonctionnality for "sharing" files, for use it simply change settings in config file and replace "nfs" with "rsync" in synced_folder > sync_type.
+
+### RSYNC
+Rsync if faster more than NFS under Windows, it simply use VM local filesystem but synchronize your locally (host) files changed.
+
+For use it, you can simply use Cygwin (https://www.cygwin.com/) and install the rsync packages et their dependencies. Next you have to edit the config.yaml file and replace "sync_type: rsync" with "sync_type: rsync".
+
 ## Box system details:
 - memory: 512
 - cpus: 2
@@ -124,19 +141,3 @@ Put your files into "./_webfiles", it's the public web root.
   - mod_php: 0
 - XDebug actived on port :9000
 
-## Choose sharing type
-
-### WINNFS (Vagrant plugin, default option)
-This actually configured for use NFS shares for speed improvment under Windows. For use this Vagrant configuration file you have to installed the winnfs vagrant plugin (https://github.com/GM-Alex/vagrant-winnfsd), you can easily install from console (for Windows users, we recommand to use Cygwin or PowerShell), simply run:
-```
-$ vagrant plugin install vagrant-winnfsd
-```
-
-Note: for use VirtualBox under Windows you have to uninstall the Hyper-V feature.
-
-Read: http://mitchellh.com/comparing-filesystem-performance-in-virtual-machines Another good (fast) solution under Windows is to use RSYNC fonctionnality for "sharing" files, for use it simply change settings in config file and replace "nfs" with "rsync" in synced_folder > sync_type.
-
-### RSYNC
-Rsync if faster more than NFS under Windows, it simply use VM local filesystem but synchronize your locally (host) files changed.
-
-For use it, you can simply use Cygwin (https://www.cygwin.com/) and install the rsync packages et their dependencies. Next you have to edit the config.yaml file and replace "sync_type: rsync" with "sync_type: rsync".
