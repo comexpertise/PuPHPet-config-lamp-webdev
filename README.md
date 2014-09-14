@@ -1,11 +1,11 @@
 A web development environment with PuPHPet
 ==========================
 
-That PuPHPet configuration file is usefull for simply start a web development environment with debugging tools under a LAMP architecture (Linux/Apache/MySQL/PHP) using Vagrant.
+That PuPHPet configuration file is usefull for simply start a faster web development environment with debugging tools under a LAMP architecture (Linux/Apache/MySQL/PHP) using Vagrant.
 
 The finaly generated box provide all packages and Apache/PHP/Ruby/Pear/PECL modules what you need in major cases for web developments including debugging and admin tools (Xdebug, Drush, Composer, multitail, ccze...)
 
-Firstly writed and optimized for a Windows platform (specially for sharing web root folder settings), succesfully tested with Windows 8.1x64, VirtualBox 4.3.16 and Vagrant 1.6.5.
+Firstly writed and optimized for a Windows platform (specially for sharing web root folder settings using NFS or RSYNC), succesfully tested with Windows 8.1 x64, VirtualBox 4.3.16 and Vagrant 1.6.5 (and Cygwin x64 1.7+ with rsync sharing type).
 
 ## How-to use?
 
@@ -22,7 +22,9 @@ Enjoy!
 ## Required:
 - VirtualBox 4.3+
 - Vagrant 1.6+
-- Vagrant plugin(s) : winnfs
+  - Vagrant plugin(s):
+    - winnfs (only if you use the rsync sharing type)
+- Cygwin 1.7+ with rsync functionnal package (Windows only - only if you use the nfs sharing type)
 
 ## Used configuration
 
@@ -122,7 +124,9 @@ Put your files into "./_webfiles", it's the public web root.
   - mod_php: 0
 - XDebug actived on port :9000
 
-## WINNFS (Vagrant plugin)
+## Choose sharing type
+
+### WINNFS (Vagrant plugin, default option)
 This actually configured for use NFS shares for speed improvment under Windows. For use this Vagrant configuration file you have to installed the winnfs vagrant plugin (https://github.com/GM-Alex/vagrant-winnfsd), you can easily install from console (for Windows users, we recommand to use Cygwin or PowerShell), simply run:
 ```
 $ vagrant plugin install vagrant-winnfsd
@@ -131,3 +135,8 @@ $ vagrant plugin install vagrant-winnfsd
 Note: for use VirtualBox under Windows you have to uninstall the Hyper-V feature.
 
 Read: http://mitchellh.com/comparing-filesystem-performance-in-virtual-machines Another good (fast) solution under Windows is to use RSYNC fonctionnality for "sharing" files, for use it simply change settings in config file and replace "nfs" with "rsync" in synced_folder > sync_type.
+
+### RSYNC
+Rsync if faster more than NFS under Windows, it simply use VM local filesystem but synchronize your locally (host) files changed.
+
+For use it, you can simply use Cygwin (https://www.cygwin.com/) and install the rsync packages et their dependencies. Next you have to edit the config.yaml file and replace "sync_type: rsync" with "sync_type: rsync".
