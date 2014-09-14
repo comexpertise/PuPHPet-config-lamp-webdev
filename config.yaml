@@ -38,13 +38,15 @@ vagrantfile-local:
                 sync_type: nfs
                 rsync:
                     args:
+                        - '--chmod=ugo=rwX'
                         - '--verbose'
                         - '--archive'
+                        - '--delete'
                         - '-z'
                     exclude:
                         - .vagrant/
                         - _sql/
-                    auto: 'false'
+                    auto: 'true'
         usable_port_range:
             start: 10200
             stop: 10500
