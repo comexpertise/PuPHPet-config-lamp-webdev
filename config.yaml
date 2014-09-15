@@ -35,7 +35,7 @@ vagrantfile-local:
             HvZ0waPJas5Q:
                 source: ./
                 target: /var/www
-                # choose nfs OR rsync
+                # nfs | rsync
                 sync_type: nfs
                 rsync:
                     args:
@@ -51,7 +51,7 @@ vagrantfile-local:
                         - 'tmp/'
                         - 'nbproject/'
                         - '_webfiles/cache/*/'
-                    auto: 'true'
+                    auto: 'false'
         usable_port_range:
             start: 10200
             stop: 10500
