@@ -1,7 +1,7 @@
 Start a simple web development environment with PuPHPet ready in 5 minutes!
 ==========================
 
-That PuPHPet configuration file is usefull for simply start a faster web development environment with debugging tools under a LAMP architecture (Linux/Apache/MySQL/PHP) using Vagrant.
+That **PuPHPet configuration file** is usefull for simply start a faster web development environment with debugging tools under a LAMP architecture (Linux/Apache/MySQL/PHP) using Vagrant.
 
 The finaly generated box provide all packages and Apache/PHP/Ruby/Pear/PECL modules what you need in major cases for web developments including debugging and admin tools (Xdebug, Drush, Composer, multitail, ccze...)
 
@@ -9,9 +9,9 @@ Firstly writed and optimized for a Windows platform (specially for sharing web r
 
 ## How-to use?
 
-Go to https://puphpet.com website and drag the PuPHPet-generated manifest (config.yaml) from this repository into your browser, and the config file will be loaded and ready for edit with! You can edit config on GUI or directly click on create button to generate and download archive.
+Go to [PuPHPet website](https://puphpet.com) and drag the PuPHPet-generated manifest *(config.yaml)* from this repository into your browser, the config file will be loaded and ready for edit with! You can edit config on GUI or directly click on create button to generate and download archive.
 
-Next, extract the archive downloaded and into this folder type:
+Next, extract the downloaded archive, next go into this folder and type:
 
 ``` shell
 $ vagrant up
