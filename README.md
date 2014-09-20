@@ -1,13 +1,22 @@
 Start a simple web development environment with PuPHPet ready in 5 minutes!
 ==========================
 
-That **PuPHPet configuration file** is usefull for simply start a faster web development environment with debugging tools under a LAMP architecture (Linux/Apache/MySQL/PHP) using Vagrant.
+That **PuPHPet configuration file** is usefull for simply start a faster web development environment with **debugging tools** under a *LAMP* architecture (Linux/Apache/MySQL/PHP) using **Vagrant**.
 
 The finaly generated box provide all packages and Apache/PHP/Ruby/Pear/PECL modules what you need in major cases for web developments including debugging and admin tools (Xdebug, Drush, Composer, multitail, ccze...)
 
-Firstly writed and optimized for a Windows platform (specially for sharing web root folder settings using NFS or RSYNC), succesfully tested with Windows 8.1 x64, VirtualBox 4.3.16 and Vagrant 1.6.5 (and Cygwin x64 1.7+ with rsync sharing type).
+**Firstly writed and optimized for a Windows platform** *(specially for sharing web root folder settings using NFS or RSYNC)*, succesfully tested with Windows 8.1 x64, VirtualBox 4.3.16 and Vagrant 1.6.5 (and Cygwin x64 1.7+ for Rsync sharing type).
 
 ## How-to use?
+
+## Required:
+- VirtualBox 4.3+ OR VmWare Workstation 10+
+- Vagrant 1.6+
+  - plugin(s):
+    - winnfs (only if you use the nfs sharing type)
+- Cygwin 1.7+ (Windows - only if you use the rsync sharing type)
+  - packages:
+    - rsync
 
 Go to [PuPHPet website](https://puphpet.com) and drag the PuPHPet-generated manifest *(config.yaml)* from this repository into your browser, the config file will be loaded and ready for edit with! You can edit config on GUI or directly click on create button to generate and download archive.
 
@@ -18,15 +27,6 @@ $ vagrant up
 ```
 
 Enjoy!
-
-## Required:
-- VirtualBox 4.3+ OR VmWare Workstation 10+
-- Vagrant 1.6+
-  - plugin(s):
-    - winnfs (only if you use the nfs sharing type)
-- Cygwin 1.7+ (Windows - only if you use the rsync sharing type)
-  - packages:
-    - rsync
 
 ## Default configuration
 
