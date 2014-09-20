@@ -47,10 +47,8 @@ Note: Connect using SSH tunnel (example: MySQL Workbench (Cross Platform)), user
 
 Put your files into "./_webfiles", it's the public web root.
 
-- server_name: awesome.dev
-- server_aliases:
-  - www.awesome.dev
-- www_root: /var/www/awesome
+- server_name: dev.comexpertise.com
+- www_root: /var/www/_webfiles
 - listen_port: '80'
 - location: \.php$
 - index_files:
