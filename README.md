@@ -11,7 +11,7 @@ Firstly writed and optimized for a Windows platform (specially for sharing web r
 
 Go to https://puphpet.com website and drag the PuPHPet-generated manifest (config.yaml) from this repository into your browser, and the config file will be loaded and ready for edit with! You can edit config on GUI or directly click on create button to generate and download archive.
 
-Next, extract the archive downloaded and into this folder type :
+Next, extract the archive downloaded and into this folder type:
 
 ```
 $ vagrant up
@@ -28,18 +28,18 @@ Enjoy!
   - packages:
     - rsync
 
-## Used configuration
+## Default configuration
 
 ### Mysql:
 
-You can put your dump at "./_sql/dbname.sql" it will be automatically imported into "dbname" database.
+You can put your (MySql) dump at "./_sql/dbname.sql" it will be automatically imported into "dbname" database.
 
-root password: rootpassword
+- root password:  rootpassword
 
-- name: dbname
-- host: localhost
-- user: dbuser
-- password: dbpassword
+- name:       dbname
+- host:       localhost
+- user:       dbuser
+- password:   dbpassword
 
 Note: Connect using SSH tunnel (example: MySQL Workbench (Cross Platform)), username vagrant and SSH key generated at puphpet/files/dot/ssh/id_rsa. This key is generated after your initial "$ vagrant up"! 
 
