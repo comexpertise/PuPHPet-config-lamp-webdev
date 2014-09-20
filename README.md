@@ -18,6 +18,7 @@ The finaly generated box provide all packages and Apache/PHP/Ruby/Pear/PECL modu
   - packages:
     - rsync
 
+## Ready?
 Go to [PuPHPet website](https://puphpet.com) and drag the PuPHPet-generated manifest *(config.yaml)* from this repository into your browser, the config file will be loaded and ready for edit with! You can edit config on GUI or directly click on create button to generate and download archive.
 
 Next, extract the downloaded archive, next go into this folder and type:
