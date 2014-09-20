@@ -13,7 +13,7 @@ Go to https://puphpet.com website and drag the PuPHPet-generated manifest (confi
 
 Next, extract the archive downloaded and into this folder type:
 
-```
+``` shell
 $ vagrant up
 ```
 
