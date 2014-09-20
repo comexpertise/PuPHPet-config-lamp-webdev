@@ -20,7 +20,7 @@ $ vagrant up
 Enjoy!
 
 ## Required:
-- VirtualBox 4.3+
+- VirtualBox 4.3+ OR VmWare Workstation 10+
 - Vagrant 1.6+
   - plugin(s):
     - winnfs (only if you use the nfs sharing type)
@@ -63,23 +63,23 @@ Put your files into "./_webfiles", it's the public web root.
 ## Choose sharing type
 
 ### WINNFS (Vagrant plugin, default option)
-This actually configured for use NFS shares for speed improvment under Windows. For use this Vagrant configuration file you have to installed the winnfs vagrant plugin (https://github.com/GM-Alex/vagrant-winnfsd), you can easily install from console (for Windows users, we recommand to use Cygwin or PowerShell), simply run:
+This actually configured for use NFS shares for speed improvment under Windows. For use this Vagrant configuration file you have to installed the [winnfs vagrant plugin](https://github.com/GM-Alex/vagrant-winnfsd), you can easily install from console (for Windows users, we recommand to use Cygwin or PowerShell), simply run:
 ```
 $ vagrant plugin install vagrant-winnfsd
 ```
 
 Note: for use VirtualBox under Windows you have to uninstall the Hyper-V feature.
 
-Read: http://mitchellh.com/comparing-filesystem-performance-in-virtual-machines Another good (fast) solution under Windows is to use RSYNC fonctionnality for "sharing" files, for use it simply change settings in config file and replace "nfs" with "rsync" in synced_folder > sync_type.
+Read: [this post](http://mitchellh.com/comparing-filesystem-performance-in-virtual-machines Another good (fast)) solution under Windows is to use RSYNC fonctionnality for "sharing" files, for use it simply change settings in config file and replace "nfs" with "rsync" in synced_folder > sync_type.
 
 ### RSYNC
 Rsync if faster more than NFS under Windows, it simply use VM local filesystem but synchronize your locally (host) files changed.
 
-For use it, you can simply use Cygwin (https://www.cygwin.com/) and install the rsync packages et their dependencies. Next you have to edit the config.yaml file and replace "sync_type: nfs" with "sync_type: rsync".
+For use it, you can simply use [Cygwin](https://www.cygwin.com/) and install the rsync packages and the dependencies. Next you have to edit the config.yaml file and replace "sync_type: nfs" with "sync_type: rsync".
 
 Note about ownership: You need to manually edit the Vagrantfile to force owner/group set after rsync finished. Simply add "group: 'www-data', owner: 'www-data', " before "rsync__args: rsync_args, rsync__exclude:", finally done:
 
-```
+``` yaml
 # in Vagrantfile at line 81:
 data['vm']['synced_folder'].each do |i, folder|
       ...
@@ -91,6 +91,11 @@ data['vm']['synced_folder'].each do |i, folder|
     end
   end
 ```
+
+## Need more speed?
+
+- An good solution for performances improvement under Windows are to switch from VirtualBox to [VMWare](http://www.vmware.com/) (with [Vagrant VMWare plugin](https://www.vagrantup.com/vmware) (not free)).
+- Another solution (best performances) need to disable Vagrant sharing folders for use local filesystem of VM, and configure your favorite IDE/FTP for use FSTP (SSH) and simply upload modified files (Netbeans can automatically upload new created/modified files)
 
 ## Box system details:
 - memory: 512
