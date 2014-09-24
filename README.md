@@ -157,7 +157,7 @@ data['vm']['synced_folder'].each do |i, folder|
       - upload_max_filesize: 20M
       - post_max_size: 25M
       - max_input_time: '300'
-      - max_input_vars: '2000'
+      - max_input_vars: '5000'
   - timezone: Europe/Paris
   - mod_php: 0
 - XDebug actived on port :9000
